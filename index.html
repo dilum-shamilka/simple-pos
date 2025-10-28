@@ -462,3 +462,29 @@
 <script>
     const themeToggle = document.getElementById('themeToggle');
     const themeStyle = document.getElementById('theme-style');
+    // Check saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+
+    // Apply saved theme on page load
+    if (savedTheme === 'dark') {
+        themeStyle.href = 'styles/darkstyle.css';
+        themeToggle.checked = true;
+    } else {
+        themeStyle.href = 'styles/style.css';
+        themeToggle.checked = false;
+    }
+
+    // Toggle theme on checkbox change
+    themeToggle.addEventListener('change', function () {
+        if (this.checked) {
+            themeStyle.href = 'styles/darkstyle.css';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeStyle.href = 'styles/style.css';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+
+</body>
+</html>
