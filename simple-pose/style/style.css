@@ -110,3 +110,14 @@ body {
     font-weight: 600;
     border-bottom: 2px solid #3498db;
 }
+/* Action buttons styling */
+.action-buttons {
+    padding: 1rem 0 0.5rem;
+}
+.action-buttons .btn {
+    transition: all 0.2s ease;
+}
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
