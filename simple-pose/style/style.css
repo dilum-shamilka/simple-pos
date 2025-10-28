@@ -121,3 +121,48 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Media queries for responsive design */
+@media (max-width: 991.98px) {
+    .sidebar {
+        min-height: auto;
+    }
+    .content-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+    .action-buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-title {
+        font-size: 1.25rem;
+    }
+    .card-header h6 {
+        font-size: 1rem;
+    }
+    /* Make action buttons full width and stacked on smaller screens */
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .action-buttons .btn {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+    /* Better form field handling on mobile */
+    .row > div {
+        margin-bottom: 0.75rem;
+    }
+}meaia query responsive
