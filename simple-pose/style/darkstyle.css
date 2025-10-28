@@ -146,3 +146,16 @@ body {
 .table tbody td.text-center {
     color: white;
 }
+/* === Action Buttons Container === */
+.action-buttons {
+    padding: 1rem 0 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+.action-buttons .btn {
+    transition: all 0.2s ease;
+}
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
