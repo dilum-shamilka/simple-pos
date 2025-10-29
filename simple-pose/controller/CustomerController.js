@@ -125,6 +125,7 @@ $('#customer_update').on('click', function () {
         });
     }
 });
+
 //Reset form
 $(`#customer_reset`).on('click',function (){
     generateNextId();
@@ -134,4 +135,56 @@ $(`#customer_reset`).on('click',function (){
     $('#email').val("");
     $('#phone').val("");
     $('#address').val("");
+});
+
+// Delete Customer
+let selectedCustomerIndex = -1; // declare globally if not yet
+
+$('#customer_delete').on('click', function () {
+    if (selectedCustomerIndex !== -1) {
+        // Remove the selected customer from the database
+        customer_db.splice(selectedCustomerIndex, 1);
+
+        // Reload the updated customer list into the table
+        loadCustomerTable();  // <-- fixed this line ✅
+
+        // Show a success alert
+        Swal.fire({
+            title: "Deleted!",
+            text: "Customer has been deleted successfully.",
+            icon: "success"
+        });
+
+        // Reset the form fields
+        $('#first_name').val("");
+        $('#last_name').val("");
+        $('#email').val("");
+        $('#phone').val("");
+        $('#address').val("");
+
+        // Generate a new ID for the next customer
+        generateNextId();
+
+        // Reset the selected index
+        selectedCustomerIndex = -1;
+    } else {
+        Swal.fire({
+            icon: "warning",
+            title: "No Selection",
+            text: "Please select a customer to delete."
+        });
+    }
+});
+
+// select a customer by clicking on a table row
+$('#customer_table').on('click', 'tr', function () {
+    selectedCustomerIndex = $(this).index();  // <-- fixed this line
+    const selectedCustomer = customer_db[selectedCustomerIndex];
+
+    $('#customer_id').val(selectedCustomer.id);
+    $('#first_name').val(selectedCustomer.fname);
+    $('#last_name').val(selectedCustomer.lname);
+    $('#email').val(selectedCustomer.email);
+    $('#phone').val(selectedCustomer.phone);
+    $('#address').val(selectedCustomer.address);
 });
