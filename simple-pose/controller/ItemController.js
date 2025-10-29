@@ -83,3 +83,47 @@ $('#item_register').on('click', function () {
     generateNextId();
 
 });
+//update item
+$(`#item_update`).on('click',function (){
+    let item_id = $('#item_id').val();
+    let itemName = $('#item_name').val();
+    let category = $('#category').val();
+    let price = parseInt($('#price').val());
+    let qtyInStock = parseInt($('#qty_in_stock').val());
+    let description = $('#description').val();
+
+    if (itemName === '' || category === '' || price === '' || qtyInStock === '' || description ===''){
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Please enter valid inputs..!"
+        });
+    }else if(selectedItemIndex !== -1){
+
+        item_db[selectedItemIndex] = {
+            item_id: item_id,
+            itemName: itemName,
+            category: category,
+            price: price,
+            qtyInStock: qtyInStock,
+            description: description
+        };
+
+        loadItemTable();
+        console.log(item_db);
+
+        Swal.fire({
+            title: "Item updated successfully..!",
+            icon: "success"
+        });
+
+        $('#item_cancel').click();
+
+    }else{
+        Swal.fire({
+            icon: "warning",
+            title: "No item selected!",
+            text: "Please select a item to update."
+        });
+    }
+});
