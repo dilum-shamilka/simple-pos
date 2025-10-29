@@ -28,6 +28,7 @@ function loadCustomerIds() {
     });
 }
 
+
 //for item_id2
 function loadItemIds() {
     $('#item_id2').empty().append('<option selected disabled>Select Item ID</option>');
@@ -47,6 +48,9 @@ function loadItemIds() {
         }
     });
 }
+
+
+
 //generate ordr ids
 function generateNextId() {
     const nextId = 'OD' + String(order_db.length + 1).padStart(3, '0');
@@ -96,7 +100,8 @@ $('#add_items').on('click', function () {
         orderQty,
         total
     });
-// ✅ Move this inside the click handler
+
+    // ✅ Move this inside the click handler
     $('#order_table').append(`
         <tr>
             <td class="text-center">${item_id}</td>
@@ -106,6 +111,8 @@ $('#add_items').on('click', function () {
             <td class="text-center">${total}</td>
         </tr>
     `);
+
+
     // Optionally clear inputs after adding
     $('#cust_id').val('');
     $('#name').val('');

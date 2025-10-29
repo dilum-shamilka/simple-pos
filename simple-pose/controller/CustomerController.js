@@ -28,12 +28,12 @@ function loadCustomerTable(){
 }
 generateNextId();
 
-
 // generate customer ids
 function generateNextId() {
     const nextId = 'C' + String(customer_db.length + 1).padStart(3, '0');
     $('#customer_id').val(nextId);
 }
+
 // save customer
 $('#customer_save').on('click', function () {
     let id = $(`#customer_id`).val();
@@ -80,6 +80,7 @@ $('#customer_save').on('click', function () {
     loadCustomerTable();
     generateNextId();
 });
+
 
 // Update customer
 $('#customer_update').on('click', function () {
@@ -176,6 +177,7 @@ $('#customer_delete').on('click', function () {
     }
 });
 
+
 // select a customer by clicking on a table row
 $('#customer_table').on('click', 'tr', function () {
     selectedCustomerIndex = $(this).index();  // <-- fixed this line
@@ -227,3 +229,4 @@ $('#searchButton').on('click', function (e) {
         selectedCustomerIndex = -1;
     }
 });
+

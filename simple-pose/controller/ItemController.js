@@ -83,6 +83,7 @@ $('#item_register').on('click', function () {
     generateNextId();
 
 });
+
 //update item
 $(`#item_update`).on('click',function (){
     let item_id = $('#item_id').val();
@@ -127,6 +128,7 @@ $(`#item_update`).on('click',function (){
         });
     }
 });
+
 // Clear Form
 $(`#item_cancel`).on('click',function () {
     generateNextId();
