@@ -127,3 +127,13 @@ $(`#item_update`).on('click',function (){
         });
     }
 });
+// Clear Form
+$(`#item_cancel`).on('click',function () {
+    generateNextId();
+    $('#item_search').val("");
+    $('#item_name').val("");
+    $('#category').val("");
+    $('#price').val("");
+    $('#qty_in_stock').val("");
+    $('#description').val("");
+});
