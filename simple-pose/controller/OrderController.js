@@ -106,3 +106,13 @@ $('#add_items').on('click', function () {
             <td class="text-center">${total}</td>
         </tr>
     `);
+    // Optionally clear inputs after adding
+    $('#cust_id').val('');
+    $('#name').val('');
+    $('#address2').val('');
+    $('#item_id2').val('');
+    $('#item_name2').val('');
+    $('#price2').val('');
+    $('#qty_on_hand').val('');
+    $('#order_qty').val('');
+});
