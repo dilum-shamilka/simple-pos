@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS System - Manage Customer</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link id="theme-style" rel="stylesheet" href="styles/style.css">
+  <!--  <link id="theme-style2" rel="stylesheet" href="styles/darkstyle.css">-->
+
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 col-md-3 p-0 sidebar">
+      <div class="d-flex flex-column">
+        <div class="logo text-center text-white">POS System</div>
+        <div class="theme-toggle-wrapper d-flex justify-content-center align-items-center mt-auto mb-auto flex-column">
+          <div class="form-check form-switch text-white">
+            <input class="form-check-input" type="checkbox" id="themeToggle">
+            <label class="form-check-label" for="themeToggle">Dark Mode</label>
+          </div>
+        </div>
+        <div class="menu-heading">Main Menu</div>
+        <ul class="nav flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="customer_button" onclick=" this.classList.add('clicked')">
+              <i class="bi bi-people"></i>
+              Manage Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="item_button" onclick=" this.classList.add('clicked')">
+              <i class="bi bi-shop"></i>
+              Manage Store
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="order_button" onclick=" this.classList.add('clicked')">
+              <i class="bi bi-bag"></i>
+              Place Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="order_history_button" onclick=" this.classList.add('clicked')">
+              <i class="bi bi-bag"></i>
+              Order History
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="col-lg-10 col-md-9 p-0 content-wrapper">
+      <section id="customer_page">
+        <!-- Top Bar -->
+        <div class="bg-white shadow-sm p-3 mb-3">
+          <h5 class="page-title mb-0">Manage Customer</h5>
+        </div>
+
+        <!-- Content Area -->
+        <div class="container-fluid px-4">
+          <!-- Search Section -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-8 mb-3 mb-md-0">
+                  <input type="text" class="form-control" placeholder="Search customer by name or email" id="searchCustomer">
+                </div>
+                <div class="col-md-4">
+                  <div class="d-grid">
+                    <button class="btn btn-primary" id="searchButton">Search
+                      <i class="bi bi-search me-2"></i>Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Form Section -->
+          <div class="card mb-4">
+            <div class="card-header bg-white">
+              <h6 class="mb-0">Customer Details</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="customer_id" class="form-label">Customer ID</label>
+                    <input type="text" class="form-control" id="customer_id"  readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="first_name" placeholder="Enter first name">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" placeholder="Enter last name">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email address">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter address">
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons d-flex justify-content-end gap-2">
+                  <button type="button" class="btn btn-outline-secondary" id="customer_reset">Cancel</button>
+                  <button type="button" class="btn btn-success" id="customer_save">
+                    <i class="bi bi-person-plus me-1"></i>Register
+                  </button>
+                  <button type="button" class="btn btn-primary" id="customer_update">
+                    <i class="bi bi-pencil me-1"></i>Update
+                  </button>
+                  <button type="button" class="btn btn-danger" id="customer_delete">
+                    <i class="bi bi-trash me-1"></i>Delete
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Customer Table -->
+          <div class="card">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+              <h6 class="mb-0">All Customers</h6>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                  <thead class="table-light">
+                  <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">First Name</th>
+                    <th class="text-center">Last Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Address</th>
+                  </tr>
+                  </thead>
+                  <tbody id="customer_table">
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="item_page">
+        <!-- Top Bar -->
+        <div class="bg-white shadow-sm p-3 mb-3">
+          <h5 class="page-title mb-0">Manage Store</h5>
+        </div>
+
+        <!-- Content Area -->
+        <div class="container-fluid px-4">
+          <!-- Search Section -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-8 mb-3 mb-md-0">
+                  <input type="text" class="form-control" placeholder="Search item by name" id="item_search" >
+                </div>
+                <div class="col-md-4">
+                  <div class="d-grid">
+                    <button class="btn btn-primary" id="searchItemButton">Search
+                      <i class="bi bi-search me-2"></i>Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add Items Section -->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="add-items">
+              <div class="card mb-4">
+                <div class="card-header bg-white">
+                  <h6 class="mb-0">Register New Item</h6>
+                </div>
+                <div class="card-body">
+                  <form id="item-form">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="item_id" class="form-label">Item_Id</label>
+                        <input type="text" class="form-control" id="item_id" readonly>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="item_name" class="form-label">Item Name</label>
+                        <input type="text" class="form-control" id="item_name" placeholder="Enter item name">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="category" placeholder="Enter category">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="price" class="form-label">Price(Rs)</label>
+                        <input type="number" class="form-control" id="price" placeholder="Enter price">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="qty_in_stock" class="form-label">Qty In Stock</label>
+                        <input type="number" class="form-control" id="qty_in_stock" placeholder="Enter quantity">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-12">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+                      </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-outline-secondary" id="item_cancel">Cancel </button>
+                      <button type="button" class="btn btn-success" id="item_register">
+                        <i class="bi bi-person-plus me-1"></i>Register
+                      </button>
+                      <button type="button" class="btn btn-primary" id="item_update">
+                        <i class="bi bi-pencil me-1"></i>Update
+                      </button>
+                      <button type="button" class="btn btn-danger" id="item_delete">
+                        <i class="bi bi-trash me-1"></i>Delete
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Item Table -->
+              <div class="card">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                  <h6 class="mb-0">All Items</h6>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped mb-0">
+                      <thead class="table-light">
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Category</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Qty In Stock</th>
+                        <th class="text-center">Description</th>
+                      </tr>
+                      </thead>
+                      <tbody id="item_table">
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </section>
+
+
+
+      <section id="order_detail">
+        <!-- Top Bar -->
+        <div class="bg-white shadow-sm p-3 mb-3">
+          <h5 class="page-title mb-0">Place Order</h5>
+        </div>
+
+        <div class="container-fluid px-4">
+          <!-- Search Section -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-8 mb-3 mb-md-0">
+                  <input type="text" class="form-control" placeholder="Search order by Order ID">
+                </div>
+                <div class="col-md-4">
+                  <div class="d-grid">
+                    <button class="btn btn-primary">
+                      <i class="bi bi-search me-2"></i>Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Details Card -->
+          <div class="card mb-3 mx-3">
+            <div class="card-body">
+              <h5 class="mb-3">Order Details</h5>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label for="order_id" class="form-label"  >Order_Id</label>
+                  <input type="text" class="form-control" id="order_id" readonly>
+                </div>
+                <div class="col-md-4">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="text" class="form-control" id="date" readonly>
+                </div>
+                <div class="col-md-4">
+                  <label for="cust_id" class="form-label">Cust_Id</label>
+                  <select class="form-select" id="cust_id">
+                    <option selected disabled>Select Customer ID</option>
+                    <!-- Options will be added dynamically -->
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="col-md-6">
+                  <label for="address" class="form-label">Adress</label>
+                  <input type="text" class="form-control" id="address2">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item Select Card -->
+          <div class="card mb-3 mx-3">
+            <div class="card-body">
+              <h5 class="mb-3">Item Select</h5>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label for="item_id2" class="form-label">Item_Id</label>
+                  <select class="form-select" id="item_id2">
+                    <option selected disabled>Select Item ID</option>
+                    <!-- Options will be added dynamically -->
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="item_name" class="form-label">Item Name</label>
+                  <input type="text" class="form-control" id="item_name2">
+                </div>
+                <div class="col-md-4">
+                  <label for="price" class="form-label">Price</label>
+                  <input type="text" class="form-control" id="price2">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="qty_on_hand" class="form-label">Qty On Hand</label>
+                  <input type="text" class="form-control" id="qty_on_hand">
+                </div>
+                <div class="col-md-4">
+                  <label for="order_qty" class="form-label">Order Qty</label>
+                  <input type="text" class="form-control" id="order_qty">
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                  <button class="btn btn-primary w-100" id="add_items">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- order Table -->
+          <div class="card">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+              <h6 class="mb-0">Order Summary</h6>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                  <thead class="table-light">
+                  <tr>
+                    <th class="text-center">Item ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Order Qty</th>
+                    <th class="text-center">Total</th>
+                  </tr>
+                  </thead>
+                  <tbody id="order_table">
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-success">
+              <i class="bi bi-person-plus me-1"></i>Save
+            </button>
+            <button type="button" class="btn btn-primary">
+              <i class="bi bi-pencil me-1"></i>Update
+            </button>
+            <button type="button" class="btn btn-danger">
+              <i class="bi bi-trash me-1"></i>Delete
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="order_history">
+        <!-- Top Bar -->
+        <div class="bg-white shadow-sm p-3 mb-3">
+          <h5 class="page-title mb-0">Order History</h5>
+        </div>
+
+        <!-- Order History Table -->
+        <div class="card">
+          <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <h6 class="mb-0">History</h6>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-striped mb-0">
+                <thead class="table-light">
+                <tr>
+                  <th class="text-center">Order ID</th>
+                  <th class="text-center">Item ID</th>
+                  <th class="text-center"> Item Name</th>
+                  <th class="text-center">Cust Id</th>
+                  <th class="text-center">Cust Name</th>
+                  <th class="text-center">Qty</th>
+                  <th class="text-center">Total</th>
+                </tr>
+                </thead>
+                <tbody id="order_history_table">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="controller/SectionController.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const themeStyle = document.getElementById('theme-style');
+
+  // Check saved theme from localStorage
+  const savedTheme = localStorage.getItem('theme');
+
+  // Apply saved theme on page load
+  if (savedTheme === 'dark') {
+    themeStyle.href = 'styles/darkstyle.css';
+    themeToggle.checked = true;
+  } else {
+    themeStyle.href = 'styles/style.css';
+    themeToggle.checked = false;
+  }
+
+  // Toggle theme on checkbox change
+  themeToggle.addEventListener('change', function () {
+    if (this.checked) {
+      themeStyle.href = 'styles/darkstyle.css';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeStyle.href = 'styles/style.css';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
+</body>
+</html>
