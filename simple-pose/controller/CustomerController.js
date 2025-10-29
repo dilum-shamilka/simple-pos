@@ -81,3 +81,47 @@ $('#customer_save').on('click', function () {
     generateNextId();
 });
 
+// Update customer
+$('#customer_update').on('click', function () {
+    let id = $('#customer_id').val();
+    let fname = $('#first_name').val();
+    let lname = $('#last_name').val();
+    let email = $('#email').val();
+    let phone = $('#phone').val();
+    let address = $('#address').val();
+
+    if (fname === '' || lname === '' || email === '' || phone === '' || address === '') {
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Please enter valid inputs..!"
+        });
+    } else if (selectedCustomerIndex !== -1) {
+
+        customer_db[selectedCustomerIndex] = {
+            id: id,
+            fname: fname,
+            lname: lname,
+            email: email,
+            phone: phone,
+            address: address
+        };
+
+        loadCustomerTable();
+        console.log(customer_db);
+
+        Swal.fire({
+            title: "Customer updated successfully..!",
+            icon: "success"
+        });
+
+        $('#customer_reset').click();
+
+    } else {
+        Swal.fire({
+            icon: "warning",
+            title: "No customer selected!",
+            text: "Please select a customer to update."
+        });
+    }
+});
