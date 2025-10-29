@@ -47,3 +47,52 @@ function loadItemIds() {
         }
     });
 }
+//generate ordr ids
+function generateNextId() {
+    const nextId = 'OD' + String(order_db.length + 1).padStart(3, '0');
+    $('#order_id').val(nextId);
+}
+
+function setTodayDate() {
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; // yyyy-mm-dd
+    $('#date').val(formattedDate);
+}
+
+//add to cart
+let cart = [];
+
+$('#add_items').on('click', function () {
+    let item_id = $('#item_id2').val();
+    let item_name = $('#item_name2').val();
+    let price = parseInt($('#price2').val());
+    let qtyOnHand = parseInt($('#qty_on_hand').val());
+    let orderQty = parseInt($('#order_qty').val());
+
+    if (!item_id || !item_name || isNaN(price) || isNaN(orderQty)) {
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Please enter valid inputs..!"
+        });
+        return; // prevent continuing
+    }
+
+    if (orderQty > qtyOnHand) {
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Not enough stock available!"
+        });
+        return; // prevent continuing
+    }
+
+    const total = price * orderQty;
+
+    cart.push({
+        item_id,
+        item_name,
+        price,
+        orderQty,
+        total
+    });
