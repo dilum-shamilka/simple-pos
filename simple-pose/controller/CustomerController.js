@@ -34,3 +34,50 @@ function generateNextId() {
     const nextId = 'C' + String(customer_db.length + 1).padStart(3, '0');
     $('#customer_id').val(nextId);
 }
+// save customer
+$('#customer_save').on('click', function () {
+    let id = $(`#customer_id`).val();
+    let fname = $(`#first_name`).val();
+    let lname = $(`#last_name`).val();
+    let email = $(`#email`).val();
+    let phone = $(`#phone`).val();
+    let address = $(`#address`).val();
+
+    if (fname === '' || lname === '' || email === '' || phone === '' || address === '') {
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Please enter valid inputs..!"
+        });
+    }else{
+        let customer_data = {
+            id: id,
+            fname: fname,
+            lname: lname,
+            email: email,
+            phone: phone,
+            address: address
+        };
+
+        customer_db.push(customer_data);
+        console.log(customer_db);
+
+        loadCustomerTable();
+
+        Swal.fire({
+            title: "Customer Added successfully..!",
+            icon: "success",
+            draggable: true
+        });
+    }
+    $('#first_name').val("");
+    $('#last_name').val("");
+    $('#email').val("");
+    $('#phone').val("");
+    $('#address').val("");
+
+
+    loadCustomerTable();
+    generateNextId();
+});
+
