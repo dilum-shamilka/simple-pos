@@ -96,3 +96,13 @@ $('#add_items').on('click', function () {
         orderQty,
         total
     });
+// ✅ Move this inside the click handler
+    $('#order_table').append(`
+        <tr>
+            <td class="text-center">${item_id}</td>
+            <td class="text-center">${item_name}</td>
+            <td class="text-center">${price}</td>
+            <td class="text-center">${orderQty}</td>
+            <td class="text-center">${total}</td>
+        </tr>
+    `);
