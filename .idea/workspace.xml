@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="containt area" />
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="oder model" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "dilum-shamilka"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dilum-shamilka&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dilum-shamilka/simple-pos.git",
-    "accountId": "2b11757d-9e66-40a4-b417-f93fee132a26"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dilum-shamilka/simple-pos.git&quot;,
+    &quot;accountId&quot;: &quot;2b11757d-9e66-40a4-b417-f93fee132a26&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -47,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/WINDOWS/Downloads/simple-pose-system-project",
+    "last_opened_file_path": "C:/Users/WINDOWS/Downloads/simple-pose-system-project/styles",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +56,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WINDOWS\Downloads\simple-pose-system-project\styles" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,6 +78,7 @@
       <updated>1761400301542</updated>
       <workItem from="1761400302577" duration="2315000" />
       <workItem from="1761535717764" duration="2195000" />
+      <workItem from="1761633420405" duration="8143000" />
     </task>
     <task id="LOCAL-00001" summary="add boostrap to indexhtml">
       <option name="closed" value="true" />
@@ -114,18 +120,302 @@
       <option name="project" value="LOCAL" />
       <updated>1761537291784</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="item section topbar">
+      <option name="closed" value="true" />
+      <created>1761633486980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761633486980</updated>
+    </task>
+    <task id="LOCAL-00007" summary="search and contend area">
+      <option name="closed" value="true" />
+      <created>1761633518828</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761633518828</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add item section">
+      <option name="closed" value="true" />
+      <created>1761633549349</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761633549349</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add action button">
+      <option name="closed" value="true" />
+      <created>1761633964094</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761633964094</updated>
+    </task>
+    <task id="LOCAL-00010" summary="item table">
+      <option name="closed" value="true" />
+      <created>1761634003040</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1761634003040</updated>
+    </task>
+    <task id="LOCAL-00011" summary="oder section topbar">
+      <option name="closed" value="true" />
+      <created>1761634434531</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761634434531</updated>
+    </task>
+    <task id="LOCAL-00012" summary="search section">
+      <option name="closed" value="true" />
+      <created>1761634505100</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761634505100</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add oder detail card">
+      <option name="closed" value="true" />
+      <created>1761635024746</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761635024746</updated>
+    </task>
+    <task id="LOCAL-00014" summary="item select cart">
+      <option name="closed" value="true" />
+      <created>1761635063710</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1761635063710</updated>
+    </task>
+    <task id="LOCAL-00015" summary="odertable">
+      <option name="closed" value="true" />
+      <created>1761635091784</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1761635091784</updated>
+    </task>
+    <task id="LOCAL-00016" summary="action button">
+      <option name="closed" value="true" />
+      <created>1761635122408</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1761635122408</updated>
+    </task>
+    <task id="LOCAL-00017" summary="action button">
+      <option name="closed" value="true" />
+      <created>1761636446249</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1761636446249</updated>
+    </task>
+    <task id="LOCAL-00018" summary="oder table and others">
+      <option name="closed" value="true" />
+      <created>1761636537693</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761636537693</updated>
+    </task>
+    <task id="LOCAL-00019" summary="boostrap with propper">
+      <option name="closed" value="true" />
+      <created>1761637354012</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1761637354012</updated>
+    </task>
+    <task id="LOCAL-00020" summary="light and dark styles">
+      <option name="closed" value="true" />
+      <created>1761637402820</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1761637402820</updated>
+    </task>
+    <task id="LOCAL-00021" summary="colours">
+      <option name="closed" value="true" />
+      <created>1761638461084</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638461084</updated>
+    </task>
+    <task id="LOCAL-00022" summary="side bar">
+      <option name="closed" value="true" />
+      <created>1761638497486</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638497486</updated>
+    </task>
+    <task id="LOCAL-00023" summary="content area">
+      <option name="closed" value="true" />
+      <created>1761638530152</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638530152</updated>
+    </task>
+    <task id="LOCAL-00024" summary="form">
+      <option name="closed" value="true" />
+      <created>1761638592830</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638592830</updated>
+    </task>
+    <task id="LOCAL-00025" summary="buttons">
+      <option name="closed" value="true" />
+      <created>1761638619410</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638619410</updated>
+    </task>
+    <task id="LOCAL-00026" summary="table">
+      <option name="closed" value="true" />
+      <created>1761638648435</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638648435</updated>
+    </task>
+    <task id="LOCAL-00027" summary="action button css">
+      <option name="closed" value="true" />
+      <created>1761638686401</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638686404</updated>
+    </task>
+    <task id="LOCAL-00028" summary="search css">
+      <option name="closed" value="true" />
+      <created>1761638714509</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638714509</updated>
+    </task>
+    <task id="LOCAL-00029" summary="media query">
+      <option name="closed" value="true" />
+      <created>1761638742564</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638742564</updated>
+    </task>
+    <task id="LOCAL-00030" summary="body css">
+      <option name="closed" value="true" />
+      <created>1761638812569</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638812569</updated>
+    </task>
+    <task id="LOCAL-00031" summary="add colour styles">
+      <option name="closed" value="true" />
+      <created>1761638846381</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638846381</updated>
+    </task>
+    <task id="LOCAL-00032" summary="button style">
+      <option name="closed" value="true" />
+      <created>1761638872699</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638872699</updated>
+    </task>
+    <task id="LOCAL-00033" summary="media query responsive">
+      <option name="closed" value="true" />
+      <created>1761638938600</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638938600</updated>
+    </task>
+    <task id="LOCAL-00034" summary="index changes">
+      <option name="closed" value="true" />
+      <created>1761639638853</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1761639638853</updated>
+    </task>
+    <task id="LOCAL-00035" summary="css changes">
+      <option name="closed" value="true" />
+      <created>1761639649268</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1761639649268</updated>
+    </task>
+    <task id="LOCAL-00036" summary="customer model">
+      <option name="closed" value="true" />
+      <created>1761645463880</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1761645463880</updated>
+    </task>
+    <task id="LOCAL-00037" summary="item model">
+      <option name="closed" value="true" />
+      <created>1761645586274</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1761645586274</updated>
+    </task>
+    <task id="LOCAL-00038" summary="oder model">
+      <option name="closed" value="true" />
+      <created>1761645594997</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1761645594997</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add boostrap to indexhtml" />
-    <MESSAGE value="add side bar" />
-    <MESSAGE value=" Main Content Area" />
-    <MESSAGE value="topbar" />
-    <MESSAGE value="containt area" />
-    <option name="LAST_COMMIT_MESSAGE" value="containt area" />
+    <MESSAGE value="add oder detail card" />
+    <MESSAGE value="item select cart" />
+    <MESSAGE value="odertable" />
+    <MESSAGE value="action button" />
+    <MESSAGE value="oder table and others" />
+    <MESSAGE value="boostrap with propper" />
+    <MESSAGE value="light and dark styles" />
+    <MESSAGE value="colours" />
+    <MESSAGE value="side bar" />
+    <MESSAGE value="content area" />
+    <MESSAGE value="form" />
+    <MESSAGE value="buttons" />
+    <MESSAGE value="table" />
+    <MESSAGE value="action button css" />
+    <MESSAGE value="search css" />
+    <MESSAGE value="media query" />
+    <MESSAGE value="body css" />
+    <MESSAGE value="add colour styles" />
+    <MESSAGE value="button style" />
+    <MESSAGE value="media query responsive" />
+    <MESSAGE value="index changes" />
+    <MESSAGE value="css changes" />
+    <MESSAGE value="customer model" />
+    <MESSAGE value="item model" />
+    <MESSAGE value="oder model" />
+    <option name="LAST_COMMIT_MESSAGE" value="oder model" />
   </component>
 </project>
