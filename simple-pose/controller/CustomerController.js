@@ -188,3 +188,42 @@ $('#customer_table').on('click', 'tr', function () {
     $('#phone').val(selectedCustomer.phone);
     $('#address').val(selectedCustomer.address);
 });
+
+
+//search by email
+$('#searchButton').on('click', function (e) {
+    e.preventDefault();
+
+    const emailInput = $('#searchCustomer').val().toLowerCase();
+    let found = false;
+
+    // Search for customer in customer_db
+    customer_db.forEach((customer, index) => {
+        if (customer.email.toLowerCase() === emailInput) {
+            // Match found – fill the form
+            $('#customer_id').val(customer.id);
+            $('#first_name').val(customer.fname);
+            $('#last_name').val(customer.lname);
+            $('#email').val(customer.email);
+            $('#phone').val(customer.phone);
+            $('#address').val(customer.address);
+
+            selectedCustomerIndex = index;
+            found = true;
+            return;
+        }
+    });
+
+    if (!found) {
+        Swal.fire({
+            icon: "error",
+            title: "Not Found!",
+            text: "No customer found with that email."
+        });
+
+        // Optionally clear fields
+        $('#customer_reset').click();
+        $('#customer_form_fieldset').prop('disabled', true);
+        selectedCustomerIndex = -1;
+    }
+});
