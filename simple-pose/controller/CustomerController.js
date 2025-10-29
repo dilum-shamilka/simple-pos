@@ -27,3 +27,10 @@ function loadCustomerTable(){
     });
 }
 generateNextId();
+
+
+// generate customer ids
+function generateNextId() {
+    const nextId = 'C' + String(customer_db.length + 1).padStart(3, '0');
+    $('#customer_id').val(nextId);
+}
