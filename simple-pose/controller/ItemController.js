@@ -167,3 +167,53 @@ $(`#item_delete`).on('click',function (){
         });
     }
 });
+
+// Select a item by clicking on a table row
+$('#item_table').on('click', 'tr', function () {
+    selectedItemIndex = $(this).index();
+    const selectedItem = item_db[selectedItemIndex];
+
+    $('#item_id').val(selectedItem.item_id);
+    $('#item_name').val(selectedItem.itemName);
+    $('#category').val(selectedItem.category);
+    $('#price').val(selectedItem.price);
+    $('#qty_in_stock').val(selectedItem.qtyInStock);
+    $('#description').val(selectedItem.description);
+});
+
+// Search Item by Name
+$('#searchItemButton').on('click', function () {
+    const searchTerm = $('#item_search').val();
+    let found = false;
+
+    item_db.forEach((item, index) => {
+        if (item.itemName === searchTerm) {
+            // Match found – fill the form
+            $('#item_id').val(item.item_id);
+            $('#item_name').val(item.itemName);
+            $('#category').val(item.category);
+            $('#price').val(item.price);
+            $('#qty_in_stock').val(item.qtyInStock);
+            $('#description').val(item.description);
+
+            selectedItemIndex = index;
+            found = true;
+            return;
+        }
+    });
+
+    if (!found) {
+        Swal.fire({
+            icon: "error",
+            title: "Not Found!",
+            text: "No item found with that name."
+        });
+
+        // Optionally clear fields
+        $('#item_cancel').click();
+        selectedItemIndex = -1;
+    }
+});
+
+
+
