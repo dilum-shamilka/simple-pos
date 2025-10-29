@@ -125,3 +125,13 @@ $('#customer_update').on('click', function () {
         });
     }
 });
+//Reset form
+$(`#customer_reset`).on('click',function (){
+    generateNextId();
+    $(`#searchCustomer`).val("");
+    $('#first_name').val("");
+    $('#last_name').val("");
+    $('#email').val("");
+    $('#phone').val("");
+    $('#address').val("");
+});

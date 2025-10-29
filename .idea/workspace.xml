@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="load customermethod" />
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +79,7 @@
       <workItem from="1761400302577" duration="2315000" />
       <workItem from="1761535717764" duration="2195000" />
       <workItem from="1761633420405" duration="8143000" />
-      <workItem from="1761709553547" duration="330000" />
+      <workItem from="1761709553547" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="add boostrap to indexhtml">
       <option name="closed" value="true" />
@@ -401,16 +401,45 @@
       <option name="project" value="LOCAL" />
       <updated>1761709823531</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="generate  ids">
+      <option name="closed" value="true" />
+      <created>1761710057478</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710057478</updated>
+    </task>
+    <task id="LOCAL-00042" summary="save">
+      <option name="closed" value="true" />
+      <created>1761710070603</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710070603</updated>
+    </task>
+    <task id="LOCAL-00043" summary="update">
+      <option name="closed" value="true" />
+      <created>1761710102002</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710102002</updated>
+    </task>
+    <task id="LOCAL-00044" summary="update">
+      <option name="closed" value="true" />
+      <created>1761710180227</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710180227</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="odertable" />
-    <MESSAGE value="action button" />
-    <MESSAGE value="oder table and others" />
     <MESSAGE value="boostrap with propper" />
     <MESSAGE value="light and dark styles" />
     <MESSAGE value="colours" />
@@ -433,6 +462,9 @@
     <MESSAGE value="oder model" />
     <MESSAGE value="changes" />
     <MESSAGE value="load customermethod" />
-    <option name="LAST_COMMIT_MESSAGE" value="load customermethod" />
+    <MESSAGE value="generate  ids" />
+    <MESSAGE value="save" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
