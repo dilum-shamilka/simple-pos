@@ -27,3 +27,23 @@ function loadCustomerIds() {
         }
     });
 }
+
+//for item_id2
+function loadItemIds() {
+    $('#item_id2').empty().append('<option selected disabled>Select Item ID</option>');
+
+    item_db.forEach(item => {
+        $('#item_id2').append(`<option value="${item.item_id}">${item.item_id}</option>`);
+    });
+
+    // Attach the change event AFTER populating
+    $('#item_id2').on('change', function () {
+        const selectedId = $(this).val();
+        const item = item_db.find(i => i.item_id === selectedId);
+        if (item) {
+            $('#item_name2').val(item.itemName);
+            $('#price2').val(item.price);
+            $('#qty_on_hand').val(item.qtyInStock);
+        }
+    });
+}
