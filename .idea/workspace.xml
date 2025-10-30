@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="update" />
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment=" css changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +32,9 @@
     &quot;accountId&quot;: &quot;2b11757d-9e66-40a4-b417-f93fee132a26&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -40,24 +43,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/WINDOWS/Downloads/simple-pose-system-project/styles&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/WINDOWS/Downloads/simple-pose-system-project/simple-pose/styles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WINDOWS\Downloads\simple-pose-system-project\simple-pose\styles" />
       <recent name="C:\Users\WINDOWS\Downloads\simple-pose-system-project\styles" />
     </key>
   </component>
@@ -79,119 +83,7 @@
       <workItem from="1761400302577" duration="2315000" />
       <workItem from="1761535717764" duration="2195000" />
       <workItem from="1761633420405" duration="8143000" />
-      <workItem from="1761709553547" duration="630000" />
-    </task>
-    <task id="LOCAL-00001" summary="add boostrap to indexhtml">
-      <option name="closed" value="true" />
-      <created>1761535956413</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1761535956413</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add side bar">
-      <option name="closed" value="true" />
-      <created>1761536631075</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1761536631075</updated>
-    </task>
-    <task id="LOCAL-00003" summary=" Main Content Area">
-      <option name="closed" value="true" />
-      <created>1761536819903</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1761536819903</updated>
-    </task>
-    <task id="LOCAL-00004" summary="topbar">
-      <option name="closed" value="true" />
-      <created>1761536881509</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1761536881509</updated>
-    </task>
-    <task id="LOCAL-00005" summary="containt area">
-      <option name="closed" value="true" />
-      <created>1761537291784</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1761537291784</updated>
-    </task>
-    <task id="LOCAL-00006" summary="item section topbar">
-      <option name="closed" value="true" />
-      <created>1761633486980</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1761633486980</updated>
-    </task>
-    <task id="LOCAL-00007" summary="search and contend area">
-      <option name="closed" value="true" />
-      <created>1761633518828</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1761633518828</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add item section">
-      <option name="closed" value="true" />
-      <created>1761633549349</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1761633549349</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add action button">
-      <option name="closed" value="true" />
-      <created>1761633964094</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1761633964094</updated>
-    </task>
-    <task id="LOCAL-00010" summary="item table">
-      <option name="closed" value="true" />
-      <created>1761634003040</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1761634003040</updated>
-    </task>
-    <task id="LOCAL-00011" summary="oder section topbar">
-      <option name="closed" value="true" />
-      <created>1761634434531</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1761634434531</updated>
-    </task>
-    <task id="LOCAL-00012" summary="search section">
-      <option name="closed" value="true" />
-      <created>1761634505100</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1761634505100</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add oder detail card">
-      <option name="closed" value="true" />
-      <created>1761635024746</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1761635024746</updated>
-    </task>
-    <task id="LOCAL-00014" summary="item select cart">
-      <option name="closed" value="true" />
-      <created>1761635063710</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1761635063710</updated>
+      <workItem from="1761709553547" duration="4548000" />
     </task>
     <task id="LOCAL-00015" summary="odertable">
       <option name="closed" value="true" />
@@ -433,38 +325,190 @@
       <option name="project" value="LOCAL" />
       <updated>1761710180227</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="reset">
+      <option name="closed" value="true" />
+      <created>1761710392697</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710392697</updated>
+    </task>
+    <task id="LOCAL-00046" summary="select customer">
+      <option name="closed" value="true" />
+      <created>1761710520628</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710520628</updated>
+    </task>
+    <task id="LOCAL-00047" summary="search and clear fileds">
+      <option name="closed" value="true" />
+      <created>1761710560394</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710560394</updated>
+    </task>
+    <task id="LOCAL-00048" summary="generate id">
+      <option name="closed" value="true" />
+      <created>1761710882179</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710882179</updated>
+    </task>
+    <task id="LOCAL-00049" summary="save item">
+      <option name="closed" value="true" />
+      <created>1761710928140</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710928140</updated>
+    </task>
+    <task id="LOCAL-00050" summary="update item">
+      <option name="closed" value="true" />
+      <created>1761710966643</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1761710966643</updated>
+    </task>
+    <task id="LOCAL-00051" summary="clear item">
+      <option name="closed" value="true" />
+      <created>1761711079474</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711079474</updated>
+    </task>
+    <task id="LOCAL-00052" summary="delete item">
+      <option name="closed" value="true" />
+      <created>1761711121937</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711121937</updated>
+    </task>
+    <task id="LOCAL-00053" summary="search select options">
+      <option name="closed" value="true" />
+      <created>1761711162716</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711162716</updated>
+    </task>
+    <task id="LOCAL-00054" summary="custom id">
+      <option name="closed" value="true" />
+      <created>1761711279870</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711279872</updated>
+    </task>
+    <task id="LOCAL-00055" summary="item id">
+      <option name="closed" value="true" />
+      <created>1761711320910</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711320910</updated>
+    </task>
+    <task id="LOCAL-00056" summary="add card">
+      <option name="closed" value="true" />
+      <created>1761711675843</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711675843</updated>
+    </task>
+    <task id="LOCAL-00057" summary="click handeler">
+      <option name="closed" value="true" />
+      <created>1761711706661</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711706661</updated>
+    </task>
+    <task id="LOCAL-00058" summary="optional clearfileds">
+      <option name="closed" value="true" />
+      <created>1761711789061</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711789061</updated>
+    </task>
+    <task id="LOCAL-00059" summary="section controller">
+      <option name="closed" value="true" />
+      <created>1761711965379</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1761711965379</updated>
+    </task>
+    <task id="LOCAL-00060" summary="make db">
+      <option name="closed" value="true" />
+      <created>1761712103553</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1761712103553</updated>
+    </task>
+    <task id="LOCAL-00061" summary="controoller changes">
+      <option name="closed" value="true" />
+      <created>1761713261789</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1761713261789</updated>
+    </task>
+    <task id="LOCAL-00062" summary=" changes">
+      <option name="closed" value="true" />
+      <created>1761713277616</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1761713277616</updated>
+    </task>
+    <task id="LOCAL-00063" summary=" css changes">
+      <option name="closed" value="true" />
+      <created>1761713290497</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1761713290497</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="boostrap with propper" />
-    <MESSAGE value="light and dark styles" />
-    <MESSAGE value="colours" />
-    <MESSAGE value="side bar" />
-    <MESSAGE value="content area" />
-    <MESSAGE value="form" />
-    <MESSAGE value="buttons" />
-    <MESSAGE value="table" />
-    <MESSAGE value="action button css" />
-    <MESSAGE value="search css" />
-    <MESSAGE value="media query" />
-    <MESSAGE value="body css" />
-    <MESSAGE value="add colour styles" />
-    <MESSAGE value="button style" />
-    <MESSAGE value="media query responsive" />
-    <MESSAGE value="index changes" />
-    <MESSAGE value="css changes" />
-    <MESSAGE value="customer model" />
-    <MESSAGE value="item model" />
     <MESSAGE value="oder model" />
     <MESSAGE value="changes" />
     <MESSAGE value="load customermethod" />
     <MESSAGE value="generate  ids" />
     <MESSAGE value="save" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="reset" />
+    <MESSAGE value="select customer" />
+    <MESSAGE value="search and clear fileds" />
+    <MESSAGE value="generate id" />
+    <MESSAGE value="save item" />
+    <MESSAGE value="update item" />
+    <MESSAGE value="clear item" />
+    <MESSAGE value="delete item" />
+    <MESSAGE value="search select options" />
+    <MESSAGE value="custom id" />
+    <MESSAGE value="item id" />
+    <MESSAGE value="add card" />
+    <MESSAGE value="click handeler" />
+    <MESSAGE value="optional clearfileds" />
+    <MESSAGE value="section controller" />
+    <MESSAGE value="make db" />
+    <MESSAGE value="controoller changes" />
+    <MESSAGE value=" changes" />
+    <MESSAGE value=" css changes" />
+    <option name="LAST_COMMIT_MESSAGE" value=" css changes" />
   </component>
 </project>
