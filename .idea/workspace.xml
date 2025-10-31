@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment=" css changes" />
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="  changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/controller/CustomerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/controller/ItemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/controller/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/controller/OrderController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/model/ItemModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/model/ItemModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-pose/model/OrderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/model/OrderModel.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,22 +52,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/WINDOWS/Downloads/simple-pose-system-project/simple-pose/styles",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/WINDOWS/Downloads/simple-pose-system-project/simple-pose/styles&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\WINDOWS\Downloads\simple-pose-system-project\simple-pose\styles" />
@@ -84,22 +93,8 @@
       <workItem from="1761535717764" duration="2195000" />
       <workItem from="1761633420405" duration="8143000" />
       <workItem from="1761709553547" duration="4548000" />
-    </task>
-    <task id="LOCAL-00015" summary="odertable">
-      <option name="closed" value="true" />
-      <created>1761635091784</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1761635091784</updated>
-    </task>
-    <task id="LOCAL-00016" summary="action button">
-      <option name="closed" value="true" />
-      <created>1761635122408</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1761635122408</updated>
+      <workItem from="1761826535783" duration="1790000" />
+      <workItem from="1761882377306" duration="4862000" />
     </task>
     <task id="LOCAL-00017" summary="action button">
       <option name="closed" value="true" />
@@ -477,14 +472,29 @@
       <option name="project" value="LOCAL" />
       <updated>1761713290497</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary=" css changes">
+      <option name="closed" value="true" />
+      <created>1761826565739</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1761826565739</updated>
+    </task>
+    <task id="LOCAL-00065" summary="  changes">
+      <option name="closed" value="true" />
+      <created>1761827619353</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1761827619353</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="oder model" />
     <MESSAGE value="changes" />
     <MESSAGE value="load customermethod" />
     <MESSAGE value="generate  ids" />
@@ -509,6 +519,7 @@
     <MESSAGE value="controoller changes" />
     <MESSAGE value=" changes" />
     <MESSAGE value=" css changes" />
-    <option name="LAST_COMMIT_MESSAGE" value=" css changes" />
+    <MESSAGE value="  changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="  changes" />
   </component>
 </project>

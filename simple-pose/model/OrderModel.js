@@ -1,5 +1,8 @@
+// File: model/OrderModel.js
+
 export default class OrderModel{
-    constructor(order_id, date, cust_id, cust_name, address ,item_id, item_name ,price, qtyInStock, orderQty){
+    // Simplified the model, removing the redundant qtyInStock field
+    constructor(order_id, date, cust_id, cust_name, address ,item_id, item_name ,price, orderQty){
         this.order_id = order_id;
         this.date = date;
         this.cust_id = cust_id;
@@ -7,8 +10,7 @@ export default class OrderModel{
         this.address = address;
         this.item_id = item_id;
         this.item_name = item_name;
-        this.price = price;
-        this.qtyInStock = qtyInStock;
-        this.orderQty = orderQty;
+        this.price = price;       // Price at the time of order
+        this.orderQty = orderQty; // Quantity ordered
     }
 }
