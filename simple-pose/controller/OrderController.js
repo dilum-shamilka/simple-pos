@@ -1,7 +1,7 @@
 // File: controller/OrderController.js
 
 import {item_db, order_db, customer_db} from "../db/db.js";
-import orderModel from "../model/OrderModel.js";
+import OrderModel from "../model/OrderModel.js"; // ***FIXED: Imported as 'OrderModel' (uppercase M)***
 
 // --- Global State & Utility Functions ---
 
@@ -94,14 +94,20 @@ function loadOrderTable() {
     updateGrandTotal();
 }
 
-function resetOrderForm() {
-    // 1. Restore stock to inventory for items in the current cart
-    cart.forEach(item => {
-        const itemInDB = item_db.find(i => i.item_id === item.item_id);
-        if (itemInDB) {
-            itemInDB.qtyInStock += item.orderQty; // **STOCK RESTORED**
-        }
-    });
+/**
+ * Resets the order form.
+ * @param {boolean} restoreStock - If true, stock in the DB is restored for items in the cart (used for CANCEL). If false, stock is NOT restored (used for PLACE ORDER).
+ */
+function resetOrderForm(restoreStock = true) {
+    // 1. Restore stock to inventory for items in the current cart ONLY IF restoreStock is true
+    if (restoreStock) {
+        cart.forEach(item => {
+            const itemInDB = item_db.find(i => i.item_id === item.item_id);
+            if (itemInDB) {
+                itemInDB.qtyInStock += item.orderQty; // **STOCK RESTORED** (on Cancel/Delete)
+            }
+        });
+    }
 
     // 2. Clear cart and reset UI
     cart = [];
@@ -119,7 +125,7 @@ function resetOrderForm() {
     $('#qty_on_hand').val('');
     $('#order_qty').val('');
 
-    // Reload item IDs to reflect restored stock
+    // Reload item IDs to reflect restored stock (if done) or just reflect general state
     loadItemIds();
     loadOrderHistoryTable();
 }
@@ -138,6 +144,7 @@ function loadOrderHistoryTable() {
         return;
     }
 
+    // The order database structure is line-item based, so we just iterate over it
     order_db.forEach(order => {
         const lineTotal = order.price * order.orderQty;
 
@@ -199,8 +206,8 @@ $('#add_items').on('click', function () {
 
     const itemInDB = item_db.find(i => i.item_id === item_id);
 
-    if (orderQty > itemInDB.qtyInStock) {
-        Swal.fire({icon: "error", title: "Error!", text: `Not enough stock available! Only ${itemInDB.qtyInStock} in stock.`});
+    if (!itemInDB || orderQty > itemInDB.qtyInStock) { // Added !itemInDB check for safety
+        Swal.fire({icon: "error", title: "Error!", text: `Not enough stock available! Only ${itemInDB ? itemInDB.qtyInStock : 0} in stock.`});
         return;
     }
 
@@ -208,7 +215,6 @@ $('#add_items').on('click', function () {
     const existingCartItem = cart.find(item => item.item_id === item_id);
 
     // Update Inventory Stock (Decrease)
-    // This is the line that decreases the quantity in the inventory database
     itemInDB.qtyInStock -= orderQty; // **STOCK DECREASED**
 
     // Update Cart
@@ -247,7 +253,7 @@ $('#place_order').on('click', function () {
 
     // Save Order to Database (each item in the cart becomes an OrderModel instance)
     cart.forEach(cartItem => {
-        const newOrder = new orderModel(
+        const newOrder = new OrderModel( // ***Used correct 'OrderModel' class name***
             order_id, date, cust_id, cust_name, address,
             cartItem.item_id, cartItem.item_name, cartItem.price,
             cartItem.orderQty
@@ -262,31 +268,8 @@ $('#place_order').on('click', function () {
         text: `Order ${order_id} has been successfully placed for ${cust_name}.`,
         confirmButtonText: 'OK'
     }).then(() => {
-        // NOTE: Stock does NOT need to be restored here, as it was already decreased on item-add.
-        // We call resetOrderForm() just to clear the cart and generate a new ID,
-        // but we need to prevent the stock restoration *inside* resetOrderForm()
-        // if this was a successful order.
-
-        // We will directly implement the success reset here instead of calling resetOrderForm()
-        // to avoid incorrect stock restoration.
-
-        cart = [];
-        loadOrderTable();
-        generateNextId();
-        setTodayDate();
-
-        // Clear fields
-        $('#cust_id').val('Select Customer ID');
-        $('#name').val('');
-        $('#address2').val('');
-        $('#item_id2').val('Select Item ID');
-        $('#item_name2').val('');
-        $('#price2').val('');
-        $('#qty_on_hand').val('');
-        $('#order_qty').val('');
-
-        loadItemIds();
-        loadOrderHistoryTable();
+        // Now call the modified reset function, setting restoreStock to false
+        resetOrderForm(false);
     });
 });
 
@@ -303,7 +286,7 @@ function attachCancelOrderHandler() {
                 confirmButtonText: 'Yes, cancel it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    resetOrderForm(); // This call restores the stock!
+                    resetOrderForm(true); // This call restores the stock!
                     Swal.fire('Cancelled!', 'The current order has been cancelled and stock restored.', 'success');
                 }
             });

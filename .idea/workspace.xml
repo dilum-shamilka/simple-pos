@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="delete model">
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="changes model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-pose/model/ItemModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/model/ItemModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-pose/model/OrderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/simple-pose/model/OrderModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,14 +92,8 @@
       <workItem from="1761890309063" duration="6732000" />
       <workItem from="1761903573961" duration="1558000" />
       <workItem from="1761905323170" duration="344000" />
-    </task>
-    <task id="LOCAL-00021" summary="colours">
-      <option name="closed" value="true" />
-      <created>1761638461084</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1761638461084</updated>
+      <workItem from="1761969445633" duration="1244000" />
+      <workItem from="1761997447417" duration="464000" />
     </task>
     <task id="LOCAL-00022" summary="side bar">
       <option name="closed" value="true" />
@@ -487,14 +479,21 @@
       <option name="project" value="LOCAL" />
       <updated>1761905632537</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="changes model">
+      <option name="closed" value="true" />
+      <created>1761969463429</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1761969463430</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="reset" />
     <MESSAGE value="select customer" />
     <MESSAGE value="search and clear fileds" />
@@ -519,6 +518,7 @@
     <MESSAGE value="add transactions" />
     <MESSAGE value="do changes" />
     <MESSAGE value="delete model" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete model" />
+    <MESSAGE value="changes model" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes model" />
   </component>
 </project>
