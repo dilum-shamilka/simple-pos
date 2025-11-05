@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="changes model">
+    <list default="true" id="c9332b60-df9a-45ee-9f72-253614473b07" name="Changes" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,31 +93,10 @@
       <workItem from="1761903573961" duration="1558000" />
       <workItem from="1761905323170" duration="344000" />
       <workItem from="1761969445633" duration="1244000" />
-      <workItem from="1761997447417" duration="464000" />
-    </task>
-    <task id="LOCAL-00022" summary="side bar">
-      <option name="closed" value="true" />
-      <created>1761638497486</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1761638497486</updated>
-    </task>
-    <task id="LOCAL-00023" summary="content area">
-      <option name="closed" value="true" />
-      <created>1761638530152</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1761638530152</updated>
-    </task>
-    <task id="LOCAL-00024" summary="form">
-      <option name="closed" value="true" />
-      <created>1761638592830</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1761638592830</updated>
+      <workItem from="1761997447417" duration="5696000" />
+      <workItem from="1762074072082" duration="610000" />
+      <workItem from="1762136766658" duration="89000" />
+      <workItem from="1762173453175" duration="716000" />
     </task>
     <task id="LOCAL-00025" summary="buttons">
       <option name="closed" value="true" />
@@ -487,16 +466,37 @@
       <option name="project" value="LOCAL" />
       <updated>1761969463430</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="updates">
+      <option name="closed" value="true" />
+      <created>1762007494841</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1762007494841</updated>
+    </task>
+    <task id="LOCAL-00072" summary="changges">
+      <option name="closed" value="true" />
+      <created>1762007503997</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1762007503997</updated>
+    </task>
+    <task id="LOCAL-00073" summary="changes">
+      <option name="closed" value="true" />
+      <created>1762007655140</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1762007655140</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reset" />
-    <MESSAGE value="select customer" />
-    <MESSAGE value="search and clear fileds" />
     <MESSAGE value="generate id" />
     <MESSAGE value="save item" />
     <MESSAGE value="update item" />
@@ -519,6 +519,9 @@
     <MESSAGE value="do changes" />
     <MESSAGE value="delete model" />
     <MESSAGE value="changes model" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes model" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="changges" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>
