@@ -1,17 +1,15 @@
-// File: CustomerController.js
+
 
 import {customer_db} from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
 
-// Global variable for tracking the selected customer's index
+
 let selectedCustomerIndex = -1;
 let selectedCustomerId = null;
 
-// --- Utility Functions for Validation ---
-// Basic Email Regex: checks for 'text@text.domain'
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// 🇱🇰 Sri Lankan Phone Regex: Matches 10 digits starting with '0'
 const phoneRegex = /^0\d{9}$/;
 
 function isValidEmail(email) {
@@ -19,11 +17,11 @@ function isValidEmail(email) {
 }
 
 function isValidPhone(phone) {
-    // Clean input by removing spaces and hyphens before testing
+
     const cleanedPhone = phone.replace(/[\s-]/g, '');
     return phoneRegex.test(cleanedPhone);
 }
-// ----------------------------------------
+
 
 /**
  * Loads customer records into the HTML table.
@@ -85,10 +83,6 @@ function clearCustomerForm() {
 }
 
 
-// ---------------------------------------------
-// 🔎 LIVE SEARCH AND FILTER FUNCTION
-// ---------------------------------------------
-
 /**
  * Filters the customer table based on the input in the search box by first name, last name, or ID.
  */
@@ -97,7 +91,6 @@ function filterCustomerTable() {
 
     if (searchTerm === '') {
         loadCustomerTable();
-        // Clear main form inputs, but preserve the current ID
         $('#first_name').val("");
         $('#last_name').val("");
         $('#email').val("");
@@ -108,7 +101,6 @@ function filterCustomerTable() {
         return;
     }
 
-    // Find all customers that contain the search term in their first name, last name, or ID (case-insensitive)
     const filteredCustomers = customer_db.filter(customer =>
         customer.fname.toLowerCase().includes(searchTerm) ||
         customer.lname.toLowerCase().includes(searchTerm) ||
@@ -118,18 +110,14 @@ function filterCustomerTable() {
     if (filteredCustomers.length > 0) {
         loadCustomerTable(filteredCustomers);
     } else {
-        loadCustomerTable([]); // Show an empty table
+        loadCustomerTable([]);
     }
 }
 
-// Initial load
 loadCustomerTable();
 generateNextId();
 
 
-// ---------------------------------------------
-// Event Handlers (CRUD Operations)
-// ---------------------------------------------
 
 // Save customer (CREATE)
 $('#customer_save').on('click', function () {
@@ -272,11 +260,7 @@ $('#customer_delete').on('click', function () {
     }
 });
 
-
-// Select a customer by clicking on a table row (READ)
 $('#customer_table').on('click', 'tr', function () {
-    // Find the index of the selected item in the *full* database
-    // A more robust way would be to get the ID from the row:
     const selectedId = $(this).find('td:first').text();
     const indexInDB = customer_db.findIndex(customer => customer.id === selectedId);
 
@@ -287,34 +271,29 @@ $('#customer_table').on('click', 'tr', function () {
 });
 
 
-// ----------------- ⚡ LIVE SEARCH AND FORM LOAD IMPLEMENTATION ⚡ -----------------
 
-// 1. Live Filtering on Key Up: Filters the table by name/ID (partial match)
+
 $('#searchCustomer').on('keyup', filterCustomerTable);
-
-// 2. Button Click: Filters table AND loads the exact match by ID or Email into the form
 $('#searchButton').on('click', function (e) {
     e.preventDefault();
 
-    const searchTerm = $('#searchCustomer').val().trim(); // Get the search term
-
-    // 1. Always filter the table first based on the current search term (partial match)
+    const searchTerm = $('#searchCustomer').val().trim();
     filterCustomerTable();
 
     if (searchTerm === '') {
-        clearCustomerForm(); // Reset form/table if search is empty
+        clearCustomerForm();
         return;
     }
 
     let exactMatchIndex = -1;
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
-    // A. Try to find an EXACT match by Email (as per the search box placeholder's primary intent)
+
     exactMatchIndex = customer_db.findIndex(customer =>
         customer.email.toLowerCase() === lowerCaseSearchTerm
     );
 
-    // B. If no Email match, try to find an EXACT match by Customer ID
+
     if (exactMatchIndex === -1) {
         exactMatchIndex = customer_db.findIndex(customer =>
             customer.id.toLowerCase() === lowerCaseSearchTerm
@@ -322,7 +301,6 @@ $('#searchButton').on('click', function (e) {
     }
 
     if (exactMatchIndex !== -1) {
-        // Exact match found: Load into form and show feedback
         const foundCustomer = customer_db[exactMatchIndex];
         loadCustomerIntoForm(foundCustomer, exactMatchIndex); // Load data into form
 
@@ -337,7 +315,7 @@ $('#searchButton').on('click', function (e) {
         });
 
     } else {
-        // No exact match found, but the table is already filtered by the call to filterCustomerTable()
+
         Swal.fire({
             icon: "info",
             title: "No Exact Match",
@@ -348,7 +326,6 @@ $('#searchButton').on('click', function (e) {
             timer: 3000
         });
 
-        // Clear form data fields to prevent accidental edits, but keep the current generated ID.
         generateNextId();
         $('#first_name').val('');
         $('#last_name').val('');

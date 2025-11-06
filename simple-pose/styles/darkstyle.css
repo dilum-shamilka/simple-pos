@@ -1,47 +1,35 @@
-/* ======================================= */
-/* STYLE 2: DARK / CYBER-PUNK     */
-/* ======================================= */
-
 /* === Global Styles === */
 body {
     min-height: 100vh;
     background-color: #0d0d12; /* Darker, almost black background */
     color: #e5e5ff; /* Light, slightly cool text */
 }
-.bg-white {
-    --bs-bg-opacity: 0;
-}
 
 /* === Sidebar === */
 .sidebar {
-    /* Deep Space Blue/Black */
+    /* Updated: Deep Space Blue/Black */
     background-color: #1a1a2e;
     min-height: 100vh;
 }
 .sidebar .logo {
     font-size: 1.5rem;
     padding: 1.5rem 0;
-    /* Subtle electric blue border */
     border-bottom: 1px solid #4a4e69;
-    /* Even darker background for contrast */
     background-color: #0f0f1f;
-    color: #00d9ff; /* Electric light blue logo color */
+    color: #00d9ff;
     font-weight: 600;
 }
 .sidebar .nav-link {
-    /* Slightly more vibrant base color */
     color: rgba(229, 229, 255, 0.85);
     padding: 0.75rem 1.25rem;
     border-radius: 0.25rem;
     margin: 0.25rem 0.75rem;
 }
 .sidebar .nav-link:hover {
-    /* Hover with the primary neon blue */
     background-color: rgba(0, 217, 255, 0.15);
     color: #fff;
 }
 .sidebar .nav-link.active {
-    /* Primary neon blue for active state */
     background-color: #008cff;
     box-shadow: 0 0 10px rgba(0, 217, 255, 0.5); /* Glow effect */
     color: #fff;
@@ -55,24 +43,28 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     padding: 0.75rem 1.25rem;
-    /* Muted neon text for heading */
     color: #7b9cc0;
     font-weight: 600;
     letter-spacing: 0.05rem;
 }
+.bg-white {
+    --bs-bg-opacity: 0;
+}
 
 
-/* === Content Area & Cards === */
+/* === Content Area === */
 .content-wrapper {
     flex: 1;
+
 }
 .page-title {
     color: #00d9ff; /* Electric blue title */
     font-weight: 600;
 }
+
+/* === Card Styling === */
 .card {
     border: none;
-    /* Slightly elevated dark background for cards */
     background-color: #1e1e3b;
     color: #e5e5ff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -80,21 +72,14 @@ body {
     overflow: hidden;
 }
 .card-header h6 {
-    /* Secondary neon accent color (Cyber-Pink) */
     color: #ff33cc;
     font-weight: 600;
 }
-.search-result {
-    /* Match card background */
-    background-color: #1e1e3b;
-    border-radius: 0.375rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: #e5e5ff;
-}
+
 
 /* === Forms === */
 .form-control {
-    background-color: #1a1a2e; /* Match sidebar/card background */
+    background-color: #1a1a2e;
     border: 1px solid #4a4e69;
     color: #ffffff;
 }
@@ -102,7 +87,6 @@ body {
     color: #a0a0c0;
 }
 .form-control:focus {
-    /* Focus border to match primary neon blue */
     border-color: #00d9ff;
     box-shadow: 0 0 0 0.2rem rgba(0, 217, 255, 0.25);
 }
@@ -111,49 +95,42 @@ body {
     color: #b0b0d0;
 }
 
-
-/* === Buttons (Base) === */
+/* === Buttons === */
 .btn {
     transition: all 0.2s ease-in-out;
     font-weight: 500;
-    font-size: 0.9rem; /* Slightly reduced base font size */
 }
 .btn-primary {
-    /* Primary Neon Blue */
     background-color: #008cff;
     border-color: #008cff;
 }
 .btn-primary:hover {
-    /* Lighter, more glowy shade on hover */
     background-color: #00bfff;
     border-color: #00bfff;
     box-shadow: 0 0 10px rgba(0, 217, 255, 0.7);
 }
 .btn-success {
-    /* Neon Green for success */
     background-color: #39ff14;
     border-color: #39ff14;
-    color: #101010; /* Dark text for contrast */
+    color: #101010;
 }
 .btn-success:hover {
-    /* Enhanced glow on hover */
+
     background-color: #55ff33;
     border-color: #55ff33;
     box-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
 }
 .btn-danger {
-    /* Neon Pink/Red for danger */
     background-color: #ff33cc;
     border-color: #ff33cc;
 }
 .btn-danger:hover {
-    /* Enhanced glow on hover */
+
     background-color: #ff55dd;
     border-color: #ff55dd;
     box-shadow: 0 0 10px rgba(255, 51, 204, 0.7);
 }
 .btn-secondary {
-    /* Muted, cool dark grey */
     background-color: #4a4e69;
     border-color: #4a4e69;
     color: #fff;
@@ -163,36 +140,20 @@ body {
     border-color: #6a6e8b;
 }
 
-/* === Custom Small Button Class (Dark Theme) === */
-.btn-sm-custom-dark {
-    padding: 0.4rem 0.8rem !important;
-    font-size: 0.75rem !important;
-    font-weight: 400;
-}
-.btn-sm-custom-dark:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 0 5px rgba(0, 217, 255, 0.5); /* Subtle glow on small hover */
-}
-
-
 /* === Tables === */
 .table {
     color: #e5e5ff;
 }
 .table thead th {
-    /* Table header background */
     background-color: #1e1e3b;
     color: #00d9ff;
     font-weight: 600;
-    /* Table header line to match primary neon blue */
     border-bottom: 2px solid #00d9ff;
 }
 .table tbody tr {
-    /* Table row background */
     background-color: #16162a;
 }
 .table tbody tr:hover {
-    /* Table row hover background */
     background-color: #2c2c50;
     color: #fff;
 }
@@ -200,18 +161,24 @@ body {
     color: white;
 }
 
-/* === Action Buttons Container (Applies to all themes) === */
+/* === Action Buttons Container === */
 .action-buttons {
     padding: 1rem 0 0.5rem;
     display: flex;
     gap: 1rem;
 }
 .action-buttons .btn {
-    margin: 0.1rem;
+    transition: all 0.2s ease;
 }
 .action-buttons .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 217, 255, 0.4);
 }
 
-/* ... (Media queries would go here) ... */
+/* === Search Results Box === */
+.search-result {
+    background-color: #1e1e3b;
+    border-radius: 0.375rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #e5e5ff;
+}

@@ -1,4 +1,4 @@
-// File: ItemController.js
+
 
 import {item_db} from "../db/db.js";
 import ItemModel from "../model/ItemModel.js"; // Import the fixed model
@@ -9,9 +9,6 @@ let selectedItemIndex = -1;
 loadItemTable();
 generateNextId();
 
-// ---------------------------------------------
-// Core Functions
-// ---------------------------------------------
 
 /**
  * Renders the item data from item_db into the HTML table.
@@ -87,9 +84,7 @@ function loadItemIntoForm(item, index) {
 }
 
 
-// ---------------------------------------------
-// 🔎 LIVE SEARCH AND FILTER FUNCTION
-// ---------------------------------------------
+
 
 /**
  * Filters the item table based on the input in the search box.
@@ -110,7 +105,7 @@ function filterItemTable() {
         return;
     }
 
-    // Find all items that contain the search term in their name (case-insensitive)
+
     const filteredItems = item_db.filter(item =>
         item.itemName.toLowerCase().includes(searchTerm)
     );
@@ -122,10 +117,6 @@ function filterItemTable() {
     }
 }
 
-
-// ---------------------------------------------
-// Event Handlers (CRUD Operations)
-// ---------------------------------------------
 
 // Save Item (CREATE)
 $('#item_register').on('click', function () {
@@ -253,7 +244,6 @@ $('#item_table').on('click', 'tr', function () {
 });
 
 
-// ----------------- ⚡ LIVE SEARCH AND FORM LOAD IMPLEMENTATION ⚡ -----------------
 
 // 1. Live Filtering on Key Up
 $('#item_search').on('keyup', filterItemTable);

@@ -1,47 +1,24 @@
-/* ======================================= */
-/* STYLE 1: LIGHT / NORMAL        */
-/* ======================================= */
-
-/* === Global Styles === */
 body {
     min-height: 100vh;
-    /* Light, soft background color */
     background-color: #eef2f5;
-    color: #1c2e4a; /* Primary text color */
 }
-
-/* === Sidebar === */
 .sidebar {
-    /* Deep Navy Blue for the sidebar */
     background-color: #1c2e4a;
     min-height: 100vh;
 }
 .sidebar .logo {
     font-size: 1.5rem;
     padding: 1.5rem 0;
-    /* Subtle separator color */
     border-bottom: 1px solid #364a66;
-    /* Darker shade for contrast */
-    background-color: #101c30;
-    color: #ecf0f1;
-    font-weight: 600;
 }
 .sidebar .nav-link {
-    /* Light grey/blue text color */
     color: rgba(236, 240, 241, 0.85);
     padding: 0.75rem 1.25rem;
     border-radius: 0.25rem;
     margin: 0.25rem 0.75rem;
 }
 .sidebar .nav-link:hover {
-    /* Soft blue on hover */
     background-color: rgba(69, 137, 216, 0.2);
-    color: #fff;
-}
-.sidebar .nav-link.active {
-    /* Vibrant primary blue for active state */
-    background-color: #4589d8;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     color: #fff;
 }
 .sidebar .nav-link i {
@@ -53,123 +30,81 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     padding: 0.75rem 1.25rem;
-    /* Light muted text for heading */
     color: #9cb1c9;
     font-weight: 600;
     letter-spacing: 0.05rem;
 }
-
-
-/* === Content Area & Cards === */
 .content-wrapper {
     flex: 1;
-}
-.page-title {
-    /* Primary text color - dark blue */
-    color: #1c2e4a;
-    font-weight: 600;
-}
-.card {
-    border: none;
-    background-color: #fff; /* White background for cards */
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
-    border-radius: 0.5rem;
-    overflow: hidden;
-}
-.card-header h6 {
-    /* Coral Accent color */
-    color: #ff6b6b;
-    font-weight: 600;
 }
 .search-result {
     background-color: #fff;
     border-radius: 0.375rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
-
-/* === Forms === */
-.form-control:focus {
-    /* Focus border to match primary blue */
-    border-color: #4589d8;
-    box-shadow: 0 0 0 0.2rem rgba(69, 137, 216, 0.25);
-}
 .customer-form input:disabled {
-    /* Match new background tone */
     background-color: #f2f5f7;
 }
 
-/* === Buttons (Base) === */
-.btn {
-    transition: all 0.2s ease-in-out;
-    font-weight: 500;
-    font-size: 0.9rem; /* Slightly reduced base font size */
+
+.sidebar {
+    background-color: #1c2e4a;
+}
+.sidebar .logo {
+    background-color: #101c30;
+    color: #ecf0f1;
+    font-weight: 600;
+}
+.sidebar .nav-link.active {
+    background-color: #4589d8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+.page-title {
+    color: #1c2e4a;
+    font-weight: 600;
+}
+.card {
+    border: none;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.card-header h6 {
+    color: #ff6b6b;
+    font-weight: 600;
 }
 .btn-primary {
-    /* Vibrant Primary Blue */
     background-color: #4589d8;
     border-color: #4589d8;
 }
 .btn-primary:hover {
-    /* Darker Primary Blue on hover */
     background-color: #3870b3;
     border-color: #3870b3;
 }
 .btn-success {
-    /* Muted Teal/Green for success */
     background-color: #2ab7a8;
     border-color: #2ab7a8;
 }
 .btn-success:hover {
-    /* Darker Muted Teal/Green on hover */
     background-color: #239488;
     border-color: #239488;
 }
 .btn-danger {
-    /* Vibrant Coral Red for danger */
     background-color: #ff6b6b;
     border-color: #ff6b6b;
 }
 .btn-danger:hover {
-    /* Darker Coral Red on hover */
     background-color: #e65a5a;
     border-color: #e65a5a;
 }
-
-/* === Custom Small Button Class (Light Theme) === */
-.btn-sm-custom-light {
-    padding: 0.4rem 0.8rem !important;
-    font-size: 0.75rem !important;
-    font-weight: 400;
+.form-control:focus {
+    border-color: #4589d8;
+    box-shadow: 0 0 0 0.2rem rgba(69, 137, 216, 0.25);
 }
-.btn-sm-custom-light:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-
-/* === Tables === */
 .table thead th {
-    /* Table header text color */
     color: #1c2e4a;
     font-weight: 600;
-    /* Table header line to match primary blue */
     border-bottom: 2px solid #4589d8;
 }
 
-
-/* === Action Buttons Container (Applies to all themes) === */
-.action-buttons {
-    padding: 1rem 0 0.5rem;
-    display: flex;
-    gap: 1rem;
-}
-.action-buttons .btn {
-    /* Ensure smaller buttons override the default padding here */
-    margin: 0.1rem;
-}
-.action-buttons .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ... (Media queries would go here) ... */

@@ -1,13 +1,12 @@
-// File: controller/OrderController.js
+
 
 import {item_db, order_db, customer_db} from "../db/db.js";
 import OrderModel from "../model/OrderModel.js"; // ***FIXED: Imported as 'OrderModel' (uppercase M)***
 
-// --- Global State & Utility Functions ---
 
 let cart = [];
 
-// --- Initialization ---
+
 
 $(document).ready(function () {
     loadCustomerIds();
@@ -17,10 +16,10 @@ $(document).ready(function () {
     updateGrandTotal();
     attachCartDeleteHandler();
     attachCancelOrderHandler();
-    loadOrderHistoryTable(); // Load history on page load
+    loadOrderHistoryTable();
 });
 
-// --- Utility Functions ---
+
 
 function loadCustomerIds() {
     $('#cust_id').empty().append('<option selected disabled>Select Customer ID</option>');
@@ -99,7 +98,7 @@ function loadOrderTable() {
  * @param {boolean} restoreStock - If true, stock in the DB is restored for items in the cart (used for CANCEL). If false, stock is NOT restored (used for PLACE ORDER).
  */
 function resetOrderForm(restoreStock = true) {
-    // 1. Restore stock to inventory for items in the current cart ONLY IF restoreStock is true
+
     if (restoreStock) {
         cart.forEach(item => {
             const itemInDB = item_db.find(i => i.item_id === item.item_id);
@@ -163,7 +162,7 @@ function loadOrderHistoryTable() {
 }
 
 
-// --- Event Handlers ---
+
 
 // Handler for deleting items from the cart and restoring stock
 function attachCartDeleteHandler() {
@@ -215,7 +214,7 @@ $('#add_items').on('click', function () {
     const existingCartItem = cart.find(item => item.item_id === item_id);
 
     // Update Inventory Stock (Decrease)
-    itemInDB.qtyInStock -= orderQty; // **STOCK DECREASED**
+    itemInDB.qtyInStock -= orderQty;
 
     // Update Cart
     if (existingCartItem) {
@@ -234,7 +233,6 @@ $('#add_items').on('click', function () {
     $('#qty_on_hand').val('');
     $('#order_qty').val('');
 
-    // Reload item IDs to reflect the stock change (i.e., hide items that are now out of stock)
     loadItemIds();
 });
 
@@ -251,7 +249,7 @@ $('#place_order').on('click', function () {
         return;
     }
 
-    // Save Order to Database (each item in the cart becomes an OrderModel instance)
+
     cart.forEach(cartItem => {
         const newOrder = new OrderModel( // ***Used correct 'OrderModel' class name***
             order_id, date, cust_id, cust_name, address,

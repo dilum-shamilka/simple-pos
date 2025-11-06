@@ -524,15 +524,11 @@
   });
 
 
-  // LOGIN/LOGOUT LOGIC
-
-
   const loginPage = document.getElementById('login_page');
   const mainApp = document.getElementById('pos_main_app');
   const loginForm = document.getElementById('login-form');
   const logoutButton = document.getElementById('logoutButton');
 
-  // Hardcoded credentials for demonstration
   const VALID_USERNAME = 'user';
   const VALID_PASSWORD = 'password';
 
@@ -546,11 +542,8 @@
     mainApp.style.display = 'flex';
   }
 
-  // Check if a session/auth token exists (for a real app)
-  // For this demo, we assume we need to log in initially.
   showLogin();
 
-  // Handle Login
   loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -558,7 +551,6 @@
     const passwordInput = document.getElementById('inputPassword').value;
 
     if (usernameInput === VALID_USERNAME && passwordInput === VALID_PASSWORD) {
-      // Successful Login
       Swal.fire({
         icon: 'success',
         title: 'Login Successful',
@@ -576,7 +568,7 @@
     }
   });
 
-  // Handle Logout
+
   logoutButton.addEventListener('click', function() {
     Swal.fire({
       title: 'Are you sure?',
@@ -588,10 +580,8 @@
       confirmButtonText: 'Yes, log me out!'
     }).then((result) => {
       if (result.isConfirmed) {
-        // Clear session/token (for a real app)
-        // Redirect to login page
         showLogin();
-        // Clear input fields on login form
+
         loginForm.reset();
         Swal.fire(
                 'Logged Out!',
