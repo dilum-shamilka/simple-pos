@@ -21,12 +21,12 @@
       display: none;
     }
 
-    /* Ensure only one section is displayed at a time within the content wrapper */
+
     .content-wrapper section:not(#login_page) {
       display: none;
     }
 
-    /* Start the app on the customer page initially after login */
+
     #customer_page {
       display: block;
     }
@@ -327,8 +327,6 @@
               </div>
         </section>
 
-
-
         <section id="order_detail">
           <div class="bg-white shadow-sm p-3 mb-3">
             <h5 class="page-title mb-0">Place Order</h5>
@@ -596,7 +594,6 @@
   function showApp() {
     loginPage.style.display = 'none';
     mainApp.style.display = 'flex';
-    // Default to customer page after login
     showSection('customer_page');
   }
 

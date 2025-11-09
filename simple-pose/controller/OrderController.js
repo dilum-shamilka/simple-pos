@@ -1,7 +1,7 @@
 
 
 import {item_db, order_db, customer_db} from "../db/db.js";
-import OrderModel from "../model/OrderModel.js"; // ***FIXED: Imported as 'OrderModel' (uppercase M)***
+import OrderModel from "../model/OrderModel.js";
 
 
 let cart = [];
@@ -103,7 +103,7 @@ function resetOrderForm(restoreStock = true) {
         cart.forEach(item => {
             const itemInDB = item_db.find(i => i.item_id === item.item_id);
             if (itemInDB) {
-                itemInDB.qtyInStock += item.orderQty; // **STOCK RESTORED** (on Cancel/Delete)
+                itemInDB.qtyInStock += item.orderQty;
             }
         });
     }
@@ -143,7 +143,6 @@ function loadOrderHistoryTable() {
         return;
     }
 
-    // The order database structure is line-item based, so we just iterate over it
     order_db.forEach(order => {
         const lineTotal = order.price * order.orderQty;
 
@@ -161,10 +160,6 @@ function loadOrderHistoryTable() {
     });
 }
 
-
-
-
-// Handler for deleting items from the cart and restoring stock
 function attachCartDeleteHandler() {
     $('#order_table').off('click', '.delete-item').on('click', '.delete-item', function() {
         const indexToDelete = $(this).data('index');
@@ -212,11 +207,8 @@ $('#add_items').on('click', function () {
 
     const total = price * orderQty;
     const existingCartItem = cart.find(item => item.item_id === item_id);
-
-    // Update Inventory Stock (Decrease)
     itemInDB.qtyInStock -= orderQty;
 
-    // Update Cart
     if (existingCartItem) {
         existingCartItem.orderQty += orderQty;
         existingCartItem.total += total;

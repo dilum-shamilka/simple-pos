@@ -52,8 +52,8 @@ function clearForm() {
     $('#price').val("");
     $('#qty_in_stock').val("");
     $('#description').val("");
-    selectedItemIndex = -1; // Ensure selection is reset
-    loadItemTable(); // Always reset the table view to show all items
+    selectedItemIndex = -1;
+    loadItemTable();
 }
 
 /**
@@ -61,9 +61,8 @@ function clearForm() {
  */
 function isValidInput(itemName, category, price, qtyInStock, description) {
     if (itemName.trim() === '' || category.trim() === '' || description.trim() === ''){
-        return false; // Check for empty strings
+        return false;
     }
-    // Check if price and qtyInStock are valid positive numbers
     if (isNaN(price) || isNaN(qtyInStock) || price < 0 || qtyInStock < 0 || price.toString().trim() === '' || qtyInStock.toString().trim() === '') {
         return false;
     }
@@ -248,7 +247,7 @@ $('#item_table').on('click', 'tr', function () {
 // 1. Live Filtering on Key Up
 $('#item_search').on('keyup', filterItemTable);
 
-// 2. Button Click: Filters table AND loads the exact match into the form
+
 $('#searchItemButton').on('click', function () {
     const searchTerm = $('#item_search').val().trim().toLowerCase();
 
@@ -260,13 +259,13 @@ $('#searchItemButton').on('click', function () {
         return;
     }
 
-    // 2. Try to find an EXACT match to load into the form
+
     const exactMatchIndex = item_db.findIndex(item =>
         item.itemName.toLowerCase() === searchTerm
     );
 
     if (exactMatchIndex !== -1) {
-        // Exact match found: Load into form and show feedback
+
         const foundItem = item_db[exactMatchIndex];
         loadItemIntoForm(foundItem, exactMatchIndex);
 
@@ -280,7 +279,6 @@ $('#searchItemButton').on('click', function () {
             timer: 3000
         });
     } else {
-        // No exact match found, but the table is already filtered (if partial matches exist)
         Swal.fire({
             icon: "info",
             title: "Table Filtered",
@@ -291,7 +289,7 @@ $('#searchItemButton').on('click', function () {
             timer: 3000
         });
 
-        // Clear form data but keep the filtered view
+
         $('#item_name').val('');
         $('#category').val('');
         $('#price').val('');
