@@ -1,11 +1,8 @@
-
-
 import {item_db, order_db, customer_db} from "../db/db.js";
 import OrderModel from "../model/OrderModel.js";
 
 
 let cart = [];
-
 
 
 $(document).ready(function () {
@@ -17,8 +14,58 @@ $(document).ready(function () {
     attachCartDeleteHandler();
     attachCancelOrderHandler();
     loadOrderHistoryTable();
+    attachEmailReceiptHandler();
 });
 
+
+function getCustomerEmail(custId) {
+    const customer = customer_db.find(c => c.id === custId);
+    return customer ? customer.email : null; // Assuming customer objects have an 'email' property
+}
+
+function sendOrderReceipt(orderData, customerEmail) {
+    if (!customerEmail || !orderData) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Cannot send receipt. Customer email or order data is missing.',
+        });
+        return;
+    }
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Email Sent (Simulated)',
+        html: `Receipt for **Order ID ${orderData.order_id}** successfully emailed to:<br> **${customerEmail}**`,
+        showConfirmButton: false,
+        timer: 3000
+    });
+}
+
+function attachEmailReceiptHandler() {
+    $('#email_receipt').on('click', function() {
+        const orderId = $('#order_id').val();
+        const custId = $('#cust_id').val();
+        const customerEmail = getCustomerEmail(custId);
+
+        const orderData = {
+            order_id: orderId,
+            total: parseFloat($('#order_total').val()),
+            line_items: cart.map(item => ({
+                name: item.item_name,
+                qty: item.orderQty,
+                price: item.price,
+                total: item.total
+            }))
+        };
+
+        if (orderId && orderId.startsWith('OD') && custId) {
+            sendOrderReceipt(orderData, customerEmail || 'N/A (Email not found)');
+        } else {
+            Swal.fire('Note', 'Please place an order first.', 'info');
+        }
+    });
+}
 
 
 function loadCustomerIds() {
@@ -71,7 +118,6 @@ function updateGrandTotal() {
     $('#order_total').val(grandTotal.toFixed(2));
 }
 
-// Order Summary Table (Cart)
 function loadOrderTable() {
     $('#order_table').empty();
     cart.forEach((item, index) => {
@@ -108,7 +154,7 @@ function resetOrderForm(restoreStock = true) {
         });
     }
 
-    // 2. Clear cart and reset UI
+
     cart = [];
     loadOrderTable();
     generateNextId();
@@ -124,13 +170,15 @@ function resetOrderForm(restoreStock = true) {
     $('#qty_on_hand').val('');
     $('#order_qty').val('');
 
-    // Reload item IDs to reflect restored stock (if done) or just reflect general state
+    $('#email_receipt').prop('disabled', true);
+    $('#orderSearchInput').val('');
+
     loadItemIds();
     loadOrderHistoryTable();
 }
 
 
-// Order History Function
+
 function loadOrderHistoryTable() {
     $('#order_history_table').empty();
 
@@ -142,6 +190,21 @@ function loadOrderHistoryTable() {
         `);
         return;
     }
+
+
+    const orders = {};
+    order_db.forEach(item => {
+        if (!orders[item.order_id]) {
+            orders[item.order_id] = {
+                items: [],
+                total: 0,
+                cust_id: item.cust_id,
+                cust_name: item.cust_name
+            };
+        }
+        orders[item.order_id].items.push(item);
+        orders[item.order_id].total += (item.price * item.orderQty);
+    });
 
     order_db.forEach(order => {
         const lineTotal = order.price * order.orderQty;
@@ -175,11 +238,13 @@ function attachCartDeleteHandler() {
             if (result.isConfirmed) {
                 const itemInDB = item_db.find(i => i.item_id === itemToDelete.item_id);
                 if (itemInDB) {
-                    itemInDB.qtyInStock += itemToDelete.orderQty; // **STOCK RESTORED**
+                    itemInDB.qtyInStock += itemToDelete.orderQty;
                 }
                 cart.splice(indexToDelete, 1);
                 loadOrderTable();
-                loadItemIds(); // Reload to update available stock count
+                loadItemIds();
+
+                $('#email_receipt').prop('disabled', true);
                 Swal.fire('Removed!', 'Item has been removed from cart.', 'success');
             }
         });
@@ -200,7 +265,7 @@ $('#add_items').on('click', function () {
 
     const itemInDB = item_db.find(i => i.item_id === item_id);
 
-    if (!itemInDB || orderQty > itemInDB.qtyInStock) { // Added !itemInDB check for safety
+    if (!itemInDB || orderQty > itemInDB.qtyInStock) {
         Swal.fire({icon: "error", title: "Error!", text: `Not enough stock available! Only ${itemInDB ? itemInDB.qtyInStock : 0} in stock.`});
         return;
     }
@@ -218,12 +283,13 @@ $('#add_items').on('click', function () {
 
     loadOrderTable();
 
-    // Clear item selection fields
     $('#item_id2').val('Select Item ID');
     $('#item_name2').val('');
     $('#price2').val('');
     $('#qty_on_hand').val('');
     $('#order_qty').val('');
+
+    $('#email_receipt').prop('disabled', true);
 
     loadItemIds();
 });
@@ -235,6 +301,7 @@ $('#place_order').on('click', function () {
     const cust_id = $('#cust_id').val();
     const cust_name = $('#name').val();
     const address = $('#address2').val();
+    const orderTotal = parseFloat($('#order_total').val());
 
     if (!cust_id || cust_id === "Select Customer ID" || cart.length === 0) {
         Swal.fire({icon: "error", title: "Error!", text: "Please select a customer and add items to the cart to place an order."});
@@ -243,7 +310,7 @@ $('#place_order').on('click', function () {
 
 
     cart.forEach(cartItem => {
-        const newOrder = new OrderModel( // ***Used correct 'OrderModel' class name***
+        const newOrder = new OrderModel(
             order_id, date, cust_id, cust_name, address,
             cartItem.item_id, cartItem.item_name, cartItem.price,
             cartItem.orderQty
@@ -251,20 +318,36 @@ $('#place_order').on('click', function () {
         order_db.push(newOrder);
     });
 
-    // Success Notification and UI Reset
+    const customerEmail = getCustomerEmail(cust_id);
+    let orderData = {};
+
     Swal.fire({
         icon: "success",
         title: "Order Placed!",
-        text: `Order ${order_id} has been successfully placed for ${cust_name}.`,
-        confirmButtonText: 'OK'
-    }).then(() => {
-        // Now call the modified reset function, setting restoreStock to false
+        html: `Order **${order_id}** placed for ${cust_name}.<br>Total: **Rs. ${orderTotal.toFixed(2)}**`,
+        showCancelButton: true,
+        confirmButtonText: '<i class="bi bi-envelope me-1"></i> Send Email Receipt',
+        cancelButtonText: 'No, thanks'
+    }).then((result) => {
+
+
+        orderData = {
+            order_id: order_id,
+            total: orderTotal,
+            line_items: cart
+        };
+
         resetOrderForm(false);
+
+        if (result.isConfirmed) {
+
+            sendOrderReceipt(orderData, customerEmail || 'N/A (Email not found)');
+        }
+
     });
+
 });
 
-
-// Handler for cancelling the full order and restoring all stock
 function attachCancelOrderHandler() {
     $('#cancel_order').on('click', function() {
         if (cart.length > 0) {
@@ -286,7 +369,6 @@ function attachCancelOrderHandler() {
     });
 }
 
-// Handler to refresh the history table when the sidebar button is clicked
 $('#order_history_button').on('click', function() {
     loadOrderHistoryTable();
 });
