@@ -359,7 +359,7 @@ function attachCancelOrderHandler() {
                 confirmButtonText: 'Yes, cancel it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    resetOrderForm(true); // This call restores the stock!
+                    resetOrderForm(true);
                     Swal.fire('Cancelled!', 'The current order has been cancelled and stock restored.', 'success');
                 }
             });
